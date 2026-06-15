@@ -6,6 +6,8 @@
     "rootDir": "./src",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "types": ["node"],
+    "skipLibCheck": true,
 
     "strict": true,
     "noImplicitAny": true,

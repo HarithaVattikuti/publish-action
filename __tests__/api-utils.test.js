@@ -21,10 +21,7 @@ test('validateIfReleaseIsPublished throws if release is marked as pre-release', 
 
   await assert.rejects(
     apiUtils.validateIfReleaseIsPublished('v1.0.0', octokitClient),
-    {
-      message:
-        "The 'v1.0.0' release is marked as pre-release. Updating tags for pre-release is not supported"
-    }
+    /The 'v1\.0\.0' release is marked as pre-release\. Updating tags for pre-release is not supported/
   );
 });
 
