@@ -34,7 +34,8 @@ async function findTag(
       return null;
     } else {
       throw new Error(
-        `Retrieving refs failed with the following error: ${err}`
+        `Retrieving refs failed with the following error: ${err}`,
+        {cause: err}
       );
     }
   }
@@ -71,10 +72,11 @@ export async function validateIfReleaseIsPublished(
     }
   } catch (err) {
     if ((err as ErrorStatus).status === 404) {
-      throw new Error(`No GitHub release found for the ${tag} tag`);
+      throw new Error(`No GitHub release found for the ${tag} tag`, {cause: err});
     } else {
       throw new Error(
-        `Retrieving releases failed with the following error: ${err}`
+        `Retrieving releases failed with the following error: ${err}`,
+        {cause: err}
       );
     }
   }

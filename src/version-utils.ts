@@ -1,5 +1,5 @@
-import semverParse from 'semver/functions/parse';
-import SemVer from 'semver/classes/semver';
+import semverParse from 'semver/functions/parse.js';
+import SemVer from 'semver/classes/semver.js';
 
 export function isStableSemverVersion(version: SemVer): boolean {
   return version.prerelease.length === 0;
