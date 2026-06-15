@@ -5,11 +5,11 @@ import {
   updateTag,
   validateIfReleaseIsPublished,
   postMessageToSlack
-} from './api-utils';
+} from './api-utils.js';
 import {
   validateSemverVersionFromTag,
   getMajorTagFromFullTag
-} from './version-utils';
+} from './version-utils.js';
 
 async function run(): Promise<void> {
   try {

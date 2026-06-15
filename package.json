@@ -2,6 +2,7 @@
   "name": "publish-action",
   "version": "0.4.0",
   "description": "Update the major version tag (v1, v2, etc.) to point to the specified tag",
+  "type": "module",
   "main": "lib/main.js",
   "engines": {
     "node": ">=24.0.0"
@@ -11,8 +12,8 @@
     "test": "tsc && node --test __tests__/api-utils.test.js __tests__/version-utils.test.js",
     "format": "prettier --no-error-on-unmatched-pattern --config ./.prettierrc.js --write \"**/*.{ts,yml,yaml}\"",
     "format-check": "prettier --no-error-on-unmatched-pattern --config ./.prettierrc.js --check \"**/*.{ts,yml,yaml}\"",
-    "lint": "eslint --config ./.eslintrc.js \"**/*.ts\"",
-    "lint:fix": "eslint --config ./.eslintrc.js \"**/*.ts\" --fix"
+    "lint": "eslint \"**/*.ts\"",
+    "lint:fix": "eslint \"**/*.ts\" --fix"
   },
   "repository": {
     "type": "git",
@@ -29,21 +30,22 @@
   },
   "homepage": "https://github.com/actions/publish-action#readme",
   "dependencies": {
-    "@actions/core": "^2.0.3",
-    "@actions/github": "^8.0.1",
-    "@actions/http-client": "^3.0.2",
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1",
+    "@actions/http-client": "^4.0.1",
     "semver": "^7.8.4"
   },
   "devDependencies": {
-    "@types/node": "^24.13.2",
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^25.9.3",
     "@types/semver": "^7.7.1",
     "@typescript-eslint/eslint-plugin": "^8.61.1",
     "@typescript-eslint/parser": "^8.61.1",
     "@vercel/ncc": "^0.44.0",
-    "eslint": "^8.35.0",
+    "eslint": "^10.5.0",
     "eslint-config-prettier": "^10.1.8",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-n": "^18.1.0",
     "prettier": "^3.8.4",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   }
 }

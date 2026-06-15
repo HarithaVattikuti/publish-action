@@ -1,11 +1,11 @@
-const assert = require('node:assert/strict');
-const test = require('node:test');
+import assert from 'node:assert/strict';
+import test from 'node:test';
 
-const versionUtils = require('../lib/version-utils');
-const stableSemver = require('./data/stable-semver.json');
-const stableBuildSemver = require('./data/stable-build-semver.json');
-const prereleaseSemver = require('./data/prerelease-semver.json');
-const prereleaseBuildSemver = require('./data/prerelease-build-semver.json');
+import * as versionUtils from '../lib/version-utils.js';
+import stableSemver from './data/stable-semver.json' with {type: 'json'};
+import stableBuildSemver from './data/stable-build-semver.json' with {type: 'json'};
+import prereleaseSemver from './data/prerelease-semver.json' with {type: 'json'};
+import prereleaseBuildSemver from './data/prerelease-build-semver.json' with {type: 'json'};
 
 test('isStableSemverVersion returns true for stable versions', () => {
   assert.equal(versionUtils.isStableSemverVersion(stableSemver), true);
