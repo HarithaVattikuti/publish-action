@@ -1,10 +1,10 @@
-import assert from 'node:assert/strict';
-import test from 'node:test';
-import * as github from '@actions/github';
+const assert = require('node:assert/strict');
+const test = require('node:test');
+const github = require('@actions/github');
 
-import * as apiUtils from '../lib/api-utils.js';
-import prereleaseData from './data/pre-release.json' with {type: 'json'};
-import releaseData from './data/release.json' with {type: 'json'};
+const apiUtils = require('../lib/api-utils');
+const prereleaseData = require('./data/pre-release.json');
+const releaseData = require('./data/release.json');
 
 const token = 'faketoken';
 
