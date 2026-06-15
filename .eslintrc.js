@@ -3,11 +3,10 @@ module.exports = {
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:eslint-plugin-jest/recommended',
     'eslint-config-prettier'
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'eslint-plugin-node', 'eslint-plugin-jest'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-node'],
   rules: {
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
@@ -31,21 +30,8 @@ module.exports = {
     'no-constant-condition': ['error', {checkLoops: false}],
     'node/no-extraneous-import': 'error'
   },
-  overrides: [
-    {
-      files: ['**/*{test,spec}.ts'],
-      rules: {
-        '@typescript-eslint/no-unused-vars': 'off',
-        'jest/no-standalone-expect': 'off',
-        'jest/no-conditional-expect': 'off',
-        'no-console': 'off',
-
-      }
-    }
-  ],
   env: {
     node: true,
-    es6: true,
-    'jest/globals': true
+    es6: true
   }
 };
